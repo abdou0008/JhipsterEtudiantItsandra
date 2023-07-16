@@ -1,0 +1,16 @@
+{
+  "changelogDate": "20230416124506",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "nomPays",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "Pays",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

@@ -1,0 +1,105 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-etudiant-heading" data-cy="EtudiantCreateUpdateHeading">Create or edit a Etudiant</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_nom">Nom</label>
+          <input type="text" class="form-control" name="nom" id="field_nom" data-cy="nom" formControlName="nom" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_prenom">Prenom</label>
+          <input type="text" class="form-control" name="prenom" id="field_prenom" data-cy="prenom" formControlName="prenom" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_matricule">Matricule</label>
+          <input type="number" class="form-control" name="matricule" id="field_matricule" data-cy="matricule" formControlName="matricule" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_date">Date</label>
+          <div class="input-group">
+            <input
+              id="field_date"
+              data-cy="date"
+              type="text"
+              class="form-control"
+              name="date"
+              ngbDatepicker
+              #dateDp="ngbDatepicker"
+              formControlName="date"
+            />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary" (click)="dateDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+            </span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_nomNiveau">Nom Niveau</label>
+          <select class="form-control" id="field_nomNiveau" data-cy="nomNiveau" name="nomNiveau" formControlName="nomNiveau">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="niveauOption.id === editForm.get('nomNiveau')!.value?.id ? editForm.get('nomNiveau')!.value : niveauOption"
+              *ngFor="let niveauOption of niveausSharedCollection; trackBy: trackNiveauById"
+            >
+              {{ niveauOption.nomNiveau }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_nomFiliere">Nom Filiere</label>
+          <select class="form-control" id="field_nomFiliere" data-cy="nomFiliere" name="nomFiliere" formControlName="nomFiliere">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="filiereOption.id === editForm.get('nomFiliere')!.value?.id ? editForm.get('nomFiliere')!.value : filiereOption"
+              *ngFor="let filiereOption of filieresSharedCollection; trackBy: trackFiliereById"
+            >
+              {{ filiereOption.nomFiliere }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" for="field_nomPays">Nom Pays</label>
+          <select class="form-control" id="field_nomPays" data-cy="nomPays" name="nomPays" formControlName="nomPays">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="paysOption.id === editForm.get('nomPays')!.value?.id ? editForm.get('nomPays')!.value : paysOption"
+              *ngFor="let paysOption of paysSharedCollection; trackBy: trackPaysById"
+            >
+              {{ paysOption.nomPays }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

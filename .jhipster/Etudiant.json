@@ -1,0 +1,47 @@
+{
+  "changelogDate": "20230416130208",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "prenom",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "matricule",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "date",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "Etudiant",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityField": "nomNiveau",
+      "otherEntityName": "niveau",
+      "relationshipName": "nomNiveau",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "nomFiliere",
+      "otherEntityName": "filiere",
+      "relationshipName": "nomFiliere",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityField": "nomPays",
+      "otherEntityName": "pays",
+      "relationshipName": "nomPays",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

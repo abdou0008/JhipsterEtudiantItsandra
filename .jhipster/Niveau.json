@@ -1,0 +1,16 @@
+{
+  "changelogDate": "20230416125604",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "nomNiveau",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "Niveau",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}

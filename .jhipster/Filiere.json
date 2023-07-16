@@ -1,0 +1,16 @@
+{
+  "changelogDate": "20230416125444",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "nomFiliere",
+      "fieldType": "String"
+    }
+  ],
+  "jpaMetamodelFiltering": false,
+  "name": "Filiere",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}
