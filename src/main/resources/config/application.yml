@@ -182,6 +182,7 @@ jhipster:
   #   max-age: 1800
   mail:
     from: itsandraetudiant@localhost
+
   api-docs:
     default-include-pattern: ${server.servlet.context-path:}/api/**
     management-include-pattern: ${server.servlet.context-path:}/management/**
@@ -206,3 +207,4 @@ jhipster:
 # ===================================================================
 
 # application:
+
