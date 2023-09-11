@@ -61,6 +61,7 @@
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
               (click)="collapseNavbar()"
+              *jhiHasAnyAuthority="'ROLE_ADMIN'"
             >
               <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
               <span>Pays</span>
@@ -73,6 +74,7 @@
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
               (click)="collapseNavbar()"
+              *jhiHasAnyAuthority="'ROLE_ADMIN'"
             >
               <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
               <span>Filiere</span>
@@ -85,6 +87,7 @@
               routerLinkActive="active"
               [routerLinkActiveOptions]="{ exact: true }"
               (click)="collapseNavbar()"
+              *jhiHasAnyAuthority="'ROLE_ADMIN'"
             >
               <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
               <span>Niveau</span>
